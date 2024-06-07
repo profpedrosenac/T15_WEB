@@ -1,0 +1,47 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: arial;
+}
+.cor1{
+    background-color: #bdbdbd;
+}
+.cor2{
+    background-color: #8f8f8f;
+}
+.cor3{
+    background-color: #646055;
+}
+.centroDiv{
+    margin: auto;
+}
+#topo{
+    width: 1366px;
+    height: 130px;
+    padding-top: 20px;
+}
+#logo{
+    width: 200px;
+    height: 110px;
+}
+#menu{
+    width: 1366px;
+    height: 75px;
+}
+#banner{
+    width: 1366px;
+    height: 400px;
+}
+#conteudo{
+    width: 1366px;
+    height: 500px;
+}
+#parceiros{
+    height: 200px;
+}
+#rodape{
+    height: 150px;
+    width: 1366px;
+}
