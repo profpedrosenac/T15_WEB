@@ -1,0 +1,115 @@
+:root{
+    --cor01: blue;
+    --cor02: aqua;
+    --cor03: gray;
+    --largura: 1366px;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+#topo{
+    height: 450px;
+    background-color: var(--cor01);
+    padding-top: 50px;
+}
+
+#conteudo{
+    width: var(--largura);
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#mapa{
+    background-color: var(--cor01);
+    height: 400px;
+}
+#rodape{
+    background-color: var(--cor01);
+    height: 112px;
+    margin-top: 10px;
+    padding-top: 38px;
+}
+#topo1{
+    width: var(--largura);
+    background-color: red;
+    margin: auto;
+    margin-bottom: 10px;
+    height: 180px;
+}
+#banner{
+    width: var(--largura);
+    background-color: var(--cor03);
+    height: 210px;
+    margin: auto;
+}
+.cont1{
+    height: 300px;
+    background-color: var(--cor01);
+    margin-top: 10px;
+}
+#rodape1{
+    background-color: red;
+    width: var(--largura);
+    height: 75px;
+    margin: auto;
+}
+#logo{
+    width: 300px;
+    height: 180px;
+    background-color: var(--cor02);
+    float: left;
+}
+#menu{
+    width: 1056px;
+    height: 180px;
+    background-color: var(--cor02);
+    float: left;
+    margin-left: 10px;
+}
+.cont{
+    margin: 10px;
+    float: left;
+    background-color: var(--cor03);
+    height: 280px;
+    width: 846px;
+}
+.imagem{
+    float: left;
+    width: 500px;
+    height: 300px;
+    background-color: var(--cor03);
+}
+
+.itemMenu{
+    width: 200px;
+    height: 75px;
+    background-color: var(--cor03);
+    margin-top: 53px;
+    margin-left: 10px;
+    float: left;
+}
+.socialTopo{
+    width: 75px;
+    height: 75px;
+    background-color: var(--cor03);
+    margin-top: 53px;
+    margin-right: 10px;
+    float: right;
+}
+#endereco{
+    width: 1186px;
+    height: 75px;
+    background-color: var(--cor03);
+    float: left;
+}
+.socialRodape{
+    width: 75px;
+    height: 75px;
+    background-color: var(--cor03);
+    float: left;
+    margin-left: 10px;
+}
