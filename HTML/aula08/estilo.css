@@ -1,0 +1,65 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tam{
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    font-size: 30pt;
+    position: absolute;
+}
+
+#div01{
+    left: 25px;
+    top: 25px;
+}
+#div02{
+    top: 25px;
+    right: 25px;
+}
+#div03{
+    left: 25px;
+    bottom: 25px;
+}
+#div04{
+    right: 25px;
+    bottom: 25px;
+}
+#div05{
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+}
+
+#total{
+    width: 1000px;
+    background-color: gainsboro;
+    height: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+#voltarTopo{
+    height: 75px;
+    width: 75px;
+    background-color: aquamarine;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30pt;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    transition: background-color 0.5s;
+}
+#voltarTopo:hover{
+    background-color: blue;
+}
