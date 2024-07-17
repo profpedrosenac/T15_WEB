@@ -1,0 +1,31 @@
+.joaquim{
+    min-height: 150px;
+    background-color: aqua;
+}
+.joaquim2{
+    min-height: 150px;
+    background-color: blanchedalmond;
+}
+
+.tam{
+    height: 100px;
+}
+.cont01{
+    background-color: blue;
+}
+.cont02{
+    background-color: cadetblue;
+}
+#mobileSection01{
+    display: none;
+}
+
+@media (max-width: 575px)
+{
+    #mobileSection01{
+        display: block;
+    }
+    #desktopSection01{
+        display: none;
+    }
+}
