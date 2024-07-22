@@ -1,0 +1,13 @@
+Projeto Integrador
+
+Entrega e apresentação 31/07/2024
+
+2 sites + briefing
+
+1 - HTML/CSS e bootstrap
+1 - Wordpress
+
+1 site institucional para a empresa do grupo
+1 site institucional para o cliente
+
+Apresentação COMERCIAL - venda de um site
