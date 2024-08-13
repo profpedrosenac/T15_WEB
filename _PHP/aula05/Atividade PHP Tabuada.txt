@@ -1,0 +1,7 @@
+Atividade 01
+
+Ler um número e imprimir a tabuada do número escrito.
+
+Atividade 02
+
+Ao apertar o botão de OK, imprima a tabuada do 1 até o 10.

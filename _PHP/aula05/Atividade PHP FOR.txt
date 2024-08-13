@@ -1,0 +1,10 @@
+Revisão do FOR
+
+Atividade01
+Criar um sistema que ao apertar o botão imprima a contagem de 1 a 10
+
+Atividade02
+Criar um sistema que leia um valor numérico e imprima a contagem de 1 até o valor informado
+
+Atividade03
+Criar um sistema que leia 2 valores, imprima a contagem do valor A até o valor B, caso o valor B seja menor do que o valor A imprimir de forma decrescente, caso o valor A for menor do que o valor B imprimir de forma crescente
