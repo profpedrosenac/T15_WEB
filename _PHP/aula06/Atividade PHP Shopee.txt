@@ -1,0 +1,7 @@
+Atividade Bet da shopee (while)
+
+Criar um sistema que gere números aleatórios de 1 a 6 (simulando um dado)
+
+Imprimir as jogadas até o valor dos dois dados for igual à 6
+
+Imprimir a quantidade de jogadas realizadas.
