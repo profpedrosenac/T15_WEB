@@ -1,0 +1,7 @@
+CRUD
+
+Usuário
+Funcionário
+Fornecedor
+Categoria
+Produto
