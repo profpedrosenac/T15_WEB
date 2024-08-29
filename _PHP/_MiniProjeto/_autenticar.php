@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container p-2">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-11">
         <?php
 
             session_start();
@@ -19,6 +19,9 @@
             }
 
         ?>
+        </div>
+        <div class="col-sm-1 text-end">
+            <a href="_logoff.php" class="btn btn-danger">Sair</a>
         </div>
     </div>
 </div>
