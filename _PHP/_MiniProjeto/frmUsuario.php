@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+    <?php include_once("_autenticar.php")?>
     <?php include_once("CRUD_usuario.php") ?>
     <div class="container">
         <div class="row">

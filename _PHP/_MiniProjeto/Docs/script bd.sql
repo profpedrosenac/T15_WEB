@@ -90,3 +90,30 @@ create table movimentacao
     constraint FK_id_usuario_Movimentacao foreign key (id_usuario_Movimentacao) references usuario (id_usuario)
 );
 select * from movimentacao;
+
+insert into usuario 
+(nome_Usuario,login_Usuario,senha_Usuario,email_Usuario,telefone_Usuario,obs_Usuario,status_Usuario)
+values
+('Administrador do Sistema','admin','123','admin@bigode.com.br','(11) 99999-9999','','ATIVO')
+
+select * from usuario
+update usuario set obs_usuario = 'sem observação' where id_usuario = 1
+
+insert into usuario 
+(nome_Usuario,login_Usuario,senha_Usuario,email_Usuario,telefone_Usuario,obs_Usuario,status_Usuario)
+values
+('Asdrubal','asdrubal','123','asdrubal@bigode.com.br','(11) 99999-9998','','ATIVO'),
+('Benegudes','benegundes','123','benegundes@bigode.com.br','(11) 99999-9997','','ATIVO')
+
+
+update usuario set obs_usuario = 'sem observação 2' where id_usuario = 1 or id_usuario = 3
+
+delete from usuario where id_usuario = 3
+
+insert into usuario 
+(nome_Usuario,login_Usuario,senha_Usuario,email_Usuario,telefone_Usuario,obs_Usuario,status_Usuario)
+values
+('Benegudes','benegundes','123','benegundes@bigode.com.br','(11) 99999-9997','','ATIVO')
+
+
+select * from usuario
