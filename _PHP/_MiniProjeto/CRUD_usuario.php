@@ -1,6 +1,10 @@
 <?php
 include_once("conexao.php");
 
+// print_r($_FILES);
+
+// return;
+
 $codigo="";
 $nome="";
 $login="";
@@ -10,15 +14,19 @@ $telefone="";
 $obs="";
 $status="";
 $mensagem="";
+$foto="";
 
 if ($_POST) {
     if (isset($_POST['btoCadastrar'])) {
         try {
+
+            $arquivo = $_FILES['txtImg'];
+
             $sql = $conn->prepare('
                 insert into usuario 
-                    (nome_Usuario,login_Usuario,senha_Usuario,email_Usuario,telefone_Usuario,obs_Usuario,status_Usuario)
+                    (nome_Usuario,login_Usuario,senha_Usuario,email_Usuario,telefone_Usuario,obs_Usuario,status_Usuario,img_usuario)
                 values
-                    (:nome_Usuario,:login_Usuario,:senha_Usuario,:email_Usuario,:telefone_Usuario,:obs_Usuario,:status_Usuario)
+                    (:nome_Usuario,:login_Usuario,:senha_Usuario,:email_Usuario,:telefone_Usuario,:obs_Usuario,:status_Usuario,:img_usuario)
                 ');
             $sql->execute(array(
                 ':nome_Usuario'=>$_POST['txtNome'],
@@ -27,12 +35,23 @@ if ($_POST) {
                 ':email_Usuario'=>$_POST['txtEmail'],
                 ':telefone_Usuario'=>$_POST['txtTelefone'],
                 ':obs_Usuario'=>$_POST['txtObs'],
-                ':status_Usuario'=>$_POST['txtStatus']
+                ':status_Usuario'=>$_POST['txtStatus'],
+                ':img_usuario'=>$arquivo['name']
             ));
 
             if ($sql->rowCount() == 1) {
                 $mensagem='<p>Dados cadastrados com sucesso</p>';
                 $mensagem=$mensagem.'<p>ID Gerado: '.$conn->lastInsertId().'</p>';
+
+                $pasta = 'imagem/'.$conn->lastInsertId().'/';
+
+                if (!file_exists($pasta)) {
+                    mkdir($pasta);
+                }
+
+                $pasta_comp = $pasta.$arquivo['name'];
+
+                move_uploaded_file($arquivo['tmp_name'],$pasta_comp);
             }
         } catch (PDOException $e) {
             $mensagem='Erro: '.$e->getMessage();
@@ -62,6 +81,7 @@ if ($_POST) {
                     $telefone=$linha[5];
                     $obs=$linha[6];
                     $status=$linha[7];
+                    $foto=$linha[8];
                 }
             }else{
                 $mensagem="<p>Usuário inválido</p>";
@@ -89,6 +109,19 @@ if ($_POST) {
     }
     elseif (isset($_POST['btoAlterar'])) {
         try {
+            
+            $arquivo = $_FILES['txtImg'];
+            $img_usuario = "";
+
+            if (!$arquivo['name']=="") {
+                $img_usuario = $arquivo['name'];
+            } else {
+                $sql = $conn->prepare('SELECT img_usuario FROM usuario WHERE id_usuario = :id_usuario');
+                $sql->execute(array(':id_usuario' => $_POST['txtID']));
+                $result = $sql->fetch(PDO::FETCH_ASSOC);
+                $img_usuario = $result['img_usuario'];
+            }
+
             $sql = $conn->prepare('
                 update usuario set
                     nome_Usuario=:nome_Usuario,
@@ -97,7 +130,8 @@ if ($_POST) {
                     email_Usuario=:email_Usuario,
                     telefone_Usuario=:telefone_Usuario,
                     obs_Usuario=:obs_Usuario,
-                    status_Usuario=:status_Usuario 
+                    status_Usuario=:status_Usuario,
+                    img_usuario=:img_usuario
                 where id_usuario=:id_usuario
                 ');
             $sql->execute(array(
@@ -108,11 +142,23 @@ if ($_POST) {
                 ':email_Usuario'=>$_POST['txtEmail'],
                 ':telefone_Usuario'=>$_POST['txtTelefone'],
                 ':obs_Usuario'=>$_POST['txtObs'],
-                ':status_Usuario'=>$_POST['txtStatus']
+                ':status_Usuario'=>$_POST['txtStatus'],
+                ':img_usuario'=>$img_usuario
             ));
 
             if ($sql->rowCount() == 1) {
                 $mensagem='<p>Dados Alterados com sucesso</p>';
+                if (!$arquivo['name']=="") {
+                    $pasta = 'imagem/'.$_POST['txtID'].'/';
+
+                    if (!file_exists($pasta)) {
+                        mkdir($pasta);
+                    }
+
+                    $pasta_comp = $pasta.$arquivo['name'];
+
+                    move_uploaded_file($arquivo['tmp_name'],$pasta_comp);
+                }
             }
         } catch (PDOException $e) {
             echo'Erro: '.$e->getMessage();

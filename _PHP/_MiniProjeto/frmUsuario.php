@@ -17,7 +17,7 @@
                 <h1>Gerenciamento de Usuários</h1>
                 <hr>
             </div>
-            <form action="" class="form-control" method="post">
+            <form action="" class="form-control" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-sm-4">
                         <p>
@@ -41,16 +41,22 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <p>
                             <label for="txtLogin">Login</label><br>
                             <input type="text" class="form-control" id="txtLogin" name="txtLogin" value="<?=$login ?>">
                         </p>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <p>
                             <label for="txtSenha">Senha</label><br>
                             <input type="password" class="form-control" id="txtSenha" name="txtSenha" value="<?=$senha ?>">
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                            <label for="txtImg">Imagem Perfil</label><br>
+                            <input type="file" class="form-control" id="txtImg" name="txtImg">
                         </p>
                     </div>
                 </div>
@@ -92,10 +98,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-10">
                         <p>
                             <label for="txtObs">Observação</label><br>
                             <textarea name="txtObs" id="txtObs" class="form-control" rows="4"><?=$obs ?></textarea>
+                        </p>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                        <p>
+                        <img src="imagem/<?=$codigo ?>/<?=$foto ?>" alt="" class="w-100">
                         </p>
                     </div>
                 </div>
