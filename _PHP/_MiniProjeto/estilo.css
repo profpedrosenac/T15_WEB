@@ -9,3 +9,14 @@
     width: 400px;
     margin: auto;
 }
+
+.menuHome{
+    height: 70px;
+    background-color: chocolate;
+}
+
+.bannerHome{
+    height: 250px;
+    background-color: cornflowerblue;
+}
+
