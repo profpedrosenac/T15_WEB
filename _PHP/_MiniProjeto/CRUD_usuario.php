@@ -57,7 +57,7 @@ if ($_POST) {
             $mensagem='Erro: '.$e->getMessage();
         }
     }   
-    elseif (isset($_POST['btoPesquisar']))
+    elseif ($_POST['txtAcao'] = "Pesquisar")
     {
         try {
     

@@ -17,7 +17,7 @@
                 <h1>Gerenciamento de Usuários</h1>
                 <hr>
             </div>
-            <form action="" class="form-control" method="post" enctype="multipart/form-data">
+            <form action="" class="form-control" method="post" enctype="multipart/form-data" onsubmit="return false;" id="frmUsuario">
                 <div class="row">
                     <div class="col-sm-4">
                         <p>
@@ -28,7 +28,7 @@
                     <div class="col-sm-1">
                         <p>
                             <label for="">&nbsp;</label><br>
-                            <button formaction="frmUsuario.php" name="btoPesquisar" id="btoPesquisar" class="btn btn-primary">&#128270;</button>
+                            <button name="btoPesquisar" id="btoPesquisar" class="btn btn-primary" onclick="Pesquisar()">&#128270;</button>
                         </p>
                     </div>
                 </div>
@@ -122,10 +122,38 @@
                         </p>
                     </div>
                 </div>
+                <div class="row" style="display: none;">
+                    <div class="col-sm-12">
+                        <p>
+                            <label for="txtAcao">Ação</label><br>
+                            <input type="text" class="form-control" id="txtAcao" name="txtAcao">
+                        </p>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
 
+    <script>
+        function Pesquisar()
+        {
+            let form = document.getElementById("frmUsuario");
+            let id = document.getElementById("txtID");
+            let acao = document.getElementById("txtAcao");
+
+            if (id.value == "") {
+                alert("Erro, ID deve ser preenchido");
+                return;
+            }
+            acao.value = "Pesquisar";
+            form.action = "frmUsuario.php";
+            form.submit();
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+
 </body>
 </html>
